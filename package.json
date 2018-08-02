@@ -1,0 +1,12 @@
+{
+  "name": "@codeite/upcoming-responsibilities",
+  "version": "1.0.1",
+  "main": "index.js",
+  "repository": "git@github.com:codeite/upcoming-responsibilities.git",
+  "author": "Sam Plews <the@codeite.com>",
+  "license": "MIT",
+  "dependencies": {
+    "iso8601-repeating-interval": "^0.1.4",
+    "moment": "^2.22.2"
+  }
+}
