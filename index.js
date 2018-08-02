@@ -1,6 +1,6 @@
 const moment = require('moment')
 const makeInterval = require('iso8601-repeating-interval')
-const {toArray} = require('./number-range')
+const {toRange, toArray} = require('./number-range')
 
 function getResponsibilitiesAfter (responsibilities, date, count) {
   date = moment(date)
@@ -72,6 +72,8 @@ function getResponsibilitiesAfterNow (responsibilities, count) {
 
 module.exports = {
   getResponsibilitiesAfter,
-  getResponsibilitiesAfterNow
+  getResponsibilitiesAfterNow,
+  toRange,
+  toArray,
 }
 
