@@ -21,9 +21,10 @@ function getResponsibilitiesAfter (responsibilities, date, count) {
       id: x.id,
       name: x.name,
       complete: x.complete,
+      due: x.due,
       interval,
       rIndex: firstAfter.index,
-      date: firstAfter.date
+      date: firstAfter.date,
     }
   }).filter(x => x !== null)
 
@@ -46,6 +47,13 @@ function getResponsibilitiesAfter (responsibilities, date, count) {
 
     if (!result.done || !result.overdue) {
       results.push(result)
+    }
+
+    if (!result.done && nextEvent.due && nextEvent.due.startsWith && nextEvent.due.startsWith('P')) {
+      result.due = nextEvent.due
+      let duration = moment.duration(nextEvent.due)
+      result.dueDate = nextEvent.date.clone().subtract(duration)
+      result.isDue = result.dueDate.isBefore(date)
     }
 
     let nextDate
