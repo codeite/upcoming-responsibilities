@@ -1,12 +1,19 @@
 {
   "name": "@codeite/upcoming-responsibilities",
-  "version": "1.1.0",
-  "main": "index.js",
+  "version": "1.2.0",
+  "main": "build/index.js",
   "repository": "git@github.com:codeite/upcoming-responsibilities.git",
   "author": "Sam Plews <the@codeite.com>",
   "license": "MIT",
   "dependencies": {
     "iso8601-repeating-interval": "^0.1.4",
     "moment": "^2.22.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  },
+  "scripts": {
+    "build": "babel src -d build"
   }
 }
